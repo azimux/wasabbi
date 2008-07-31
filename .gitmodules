@@ -1,0 +1,6 @@
+[submodule "acts_as_hash"]
+	path = acts_as_hash
+	url = git@github.com:azimux/acts_as_hash.git
+[submodule "vendor/plugins/acts_as_hash"]
+	path = vendor/plugins/acts_as_hash
+	url = git@github.com:azimux/acts_as_hash.git
