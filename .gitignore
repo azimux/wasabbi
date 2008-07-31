@@ -1,0 +1,5 @@
+.svn
+config/database.yml
+log/*.log
+nbproject/
+*~
