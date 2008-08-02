@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyKey1
+  value: MyString
+  forum_id: 1
+
+two:
+  name: MyKey2
+  value: MyString
+  forum_id: 1

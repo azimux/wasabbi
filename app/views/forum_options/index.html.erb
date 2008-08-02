@@ -1,0 +1,24 @@
+<h1>Listing forum_options</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+    <th>Forum</th>
+  </tr>
+
+<% for forum_option in @forum_options %>
+  <tr>
+    <td><%=h forum_option.name %></td>
+    <td><%=h forum_option.value %></td>
+    <td><%=h forum_option.forum_id %></td>
+    <td><%= link_to 'Show', forum_option %></td>
+    <td><%= link_to 'Edit', edit_forum_option_path(forum_option) %></td>
+    <td><%= link_to 'Destroy', forum_option, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New forum_option', new_forum_option_path %>

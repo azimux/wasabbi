@@ -1,0 +1,24 @@
+<h1>Listing forum_categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Position</th>
+  </tr>
+
+<% for forum_category in @forum_categories %>
+  <tr>
+    <td><%=h forum_category.name %></td>
+    <td><%=h forum_category.description %></td>
+    <td><%=h forum_category.position %></td>
+    <td><%= link_to 'Show', forum_category %></td>
+    <td><%= link_to 'Edit', edit_forum_category_path(forum_category) %></td>
+    <td><%= link_to 'Destroy', forum_category, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New forum_category', new_forum_category_path %>

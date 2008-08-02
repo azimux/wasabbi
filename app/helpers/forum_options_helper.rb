@@ -1,0 +1,2 @@
+module ForumOptionsHelper
+end
