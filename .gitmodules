@@ -1,6 +1,0 @@
-[submodule "vendor/plugins/string_hash_association"]
-	path = vendor/plugins/string_hash_association
-	url = git@github.com:azimux/string_hash_association.git
-[submodule "vendor/rails"]
-	path = vendor/rails
-	url = git@github.com:azimux/rails.git
