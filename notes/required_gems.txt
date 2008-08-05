@@ -1,0 +1,4 @@
+optional (Deployment specific):
+mongrel
+mongrel_cluster
+capistrano

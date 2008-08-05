@@ -4,3 +4,9 @@
 [submodule "vendor/rails"]
 	path = vendor/rails
 	url = git://github.com/azimux/rails.git
+[submodule "vendor/plugins/wasabbi_plugin"]
+	path = vendor/plugins/wasabbi_plugin
+	url = git://github.com/azimux/wasabbi_plugin.git
+[submodule "vendor/plugins/engines"]
+	path = vendor/plugins/engines
+	url = git://github.com/azimux/engines.git
