@@ -1,3 +1,4 @@
+$:.unshift 'test'
 require 'test_helper'
 
 class ForumsControllerTest < ActionController::TestCase
@@ -37,6 +38,10 @@ class ForumsControllerTest < ActionController::TestCase
 
   def test_should_destroy_forum
     assert_difference('Forum.count', -1) do
+      forums(:one).children.each do |c|
+        c.parent = nil
+        c.save!
+      end
       delete :destroy, :id => forums(:one).id
     end
 

@@ -1,10 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :forum_options
-
-  map.resources :forums
-
-  map.resources :forum_categories
-
+  map.from_plugin :wasabbi_plugin
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

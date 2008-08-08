@@ -4,4 +4,5 @@ log/*.log
 nbproject/
 *~
 db/schema.rb
-
+db/development_structure.sql
+public/plugin_assets
