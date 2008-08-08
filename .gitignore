@@ -3,3 +3,5 @@ config/database.yml
 log/*.log
 nbproject/
 *~
+db/schema.rb
+
