@@ -6,3 +6,9 @@ nbproject/
 db/schema.rb
 db/development_structure.sql
 public/plugin_assets
+vendor/plugins/engines
+vendor/plugins/wasabbi_plugin
+vendor/plugins/redhillonrails_core
+vendor/plugins/foreign_key_migrations
+vendor/plugins/string_hash_association
+vendor/rails

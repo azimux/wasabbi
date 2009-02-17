@@ -1,0 +1,34 @@
+[.]
+scm = git
+type = rails
+
+[vendor/plugins/engines]
+path = vendor/plugins/engines
+repository = git://github.com/azimux/engines.git
+scm = git
+branch = edge
+
+[vendor/plugins/wasabbi_plugin]
+path = vendor/plugins/wasabbi_plugin
+repository = git://github.com/azimux/wasabbi_plugin.git
+scm = git
+
+[vendor/plugins/redhillonrails_core]
+path = vendor/plugins/redhillonrails_core
+repository = http://redhillonrails.rubyforge.org/svn/trunk/vendor/plugins/redhillonrails_core
+scm = svn
+
+[vendor/plugins/foreign_key_migrations]
+path = vendor/plugins/foreign_key_migrations
+repository = http://redhillonrails.rubyforge.org/svn/trunk/vendor/plugins/foreign_key_migrations
+scm = svn
+
+[vendor/plugins/string_hash_association]
+path = vendor/plugins/string_hash_association
+repository = git://github.com/azimux/string_hash_association.git
+scm = git
+
+[vendor/rails]
+path = vendor/rails
+repository = git://github.com/azimux/rails.git
+scm = git
