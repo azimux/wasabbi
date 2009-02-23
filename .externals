@@ -32,3 +32,18 @@ scm = git
 path = vendor/rails
 repository = git://github.com/azimux/rails.git
 scm = git
+
+[vendor/plugins/ax_lib]
+path = vendor/plugins/ax_lib
+repository = git://github.com/azimux/ax_lib.git
+scm = git
+
+[vendor/plugins/ax_user]
+path = vendor/plugins/ax_user
+repository = git://github.com/azimux/ax_user.git
+scm = git
+
+[vendor/plugins/ax_picture]
+path = vendor/plugins/ax_picture
+repository = git://github.com/azimux/ax_picture.git
+scm = git

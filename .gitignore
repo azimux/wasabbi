@@ -12,3 +12,6 @@ vendor/plugins/redhillonrails_core
 vendor/plugins/foreign_key_migrations
 vendor/plugins/string_hash_association
 vendor/rails
+vendor/plugins/ax_lib
+vendor/plugins/ax_user
+vendor/plugins/ax_picture
