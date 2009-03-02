@@ -1,30 +1,14 @@
-CREATE USER wasabbi_dev;
-ALTER ROLE wasabbi_dev WITH CREATEDB;
+CREATE USER wasabbi_dev WITH CREATEDB;
+CREATE USER wasabbi_test WITH CREATEDB SUPERUSER;
 
-DROP DATABASE IF EXISTS wasabbi_dev;
 CREATE DATABASE wasabbi_dev OWNER wasabbi_dev ENCODING 'utf8';
 
 \password wasabbi_dev
-
-----------------------
-
-CREATE USER wasabbi_test CREATEDB;
-ALTER ROLE wasabbi_test WITH CREATEDB;
-ALTER ROLE wasabbi_test WITH SUPERUSER;
-
 \password wasabbi_test
 
 ----------------------
 
-CREATE USER wasabbi;
-ALTER ROLE wasabbi WITH CREATEDB;
+CREATE USER wasabbi_prod;
+CREATE DATABASE wasabbi_prod ENCODING 'utf8';
 
-DROP DATABASE IF EXISTS wasabbi;
-CREATE DATABASE wasabbi ENCODING 'utf8';
-
-\password wasabbi
-
-
-----------------------
-
-
+\password wasabbi_prod
