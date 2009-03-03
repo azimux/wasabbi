@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head profile="http://www.w3.org/2005/10/profile">
+    <link rel="icon"
+          type="image/gif"
+          href="/images/favicon.gif" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title><%= @page_title || $sitename || "WasaBBi" %></title>
+    <%= wasabbi_theme_stylesheet %>
+  </head>
+
+  <body>
+    <div id="header" class="fullwidth">
+      <div id="headerinner">
+        <div id="headerinner2">
+          <%= wasabbi_logo %>
+          <div id="login">
+            <a href="/">HOME</a>
+            <a href="/">MY ACCOUNT</a>
+            <a href="/static/help">HELP</a>
+            <%= render :partial=> "user/signin_hor_form" -%>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="middlebar">
+    </div>
+
+
+    <div class="fullwidth">
+      <div id="content-main-outer">
+        <div id="content-main">
+          <% [:notice,:error,:warning].each do |s|
+            if flash[s] -%>
+              <div id="flash<%= s.to_s.capitalize -%>" class="flashDiv">
+                <%= flash[s] %>
+              </div>
+            <% end -%>
+          <% end %>
+
+          <%= yield  %>
+
+          <div style="clear:both">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <a href="/static/about">ABOUT</a>
+      <a href="/static/contact">CONTACT US</a>
+    </div>
+    <div id="bottom">
+      <p><a href="/static/copyright">&copy; 2008-2009 Historic Places Database. All rights reserved.&nbsp;</a></p>
+    </div>
+    <% if $show_debug_info %>
+      <div>Params:<%= debug(params) %><br/>
+      </div>
+    <% end %>
+  </body>
+</html>
