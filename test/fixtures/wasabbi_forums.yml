@@ -4,11 +4,8 @@ one:
   id: 1
   name: MyString
   description: MyString
-  forum_category_id: 1
 
 two:
   id: 2
   name: MyString
   description: MyString
-  parent_id: 1
-  forum_category_id: 2

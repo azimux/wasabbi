@@ -2,10 +2,10 @@
 
 one:
   name: MyKey1
-  value: MyString
-  forum_id: 1
+  value: MyString1
+  wasabbi_forum_id: 1
 
 two:
   name: MyKey2
-  value: MyString
-  forum_id: 1
+  value: MyString2
+  wasabbi_forum_id: 1

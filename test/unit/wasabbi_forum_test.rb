@@ -1,6 +1,7 @@
+$:.unshift('test')
 require 'test_helper'
 
-class ForumOptionTest < ActiveSupport::TestCase
+class WasabbiForumTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   def test_truth
     assert true
