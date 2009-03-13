@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  thread_id: 1
+  wasabbi_user_id: 1
+  modified_by_id: 1
+  is_deleted: 1
+  subject: MyText
+  body: MyText
+
+two:
+  thread_id: 1
+  wasabbi_user_id: 1
+  modified_by_id: 1
+  is_deleted: 1
+  subject: MyText
+  body: MyText

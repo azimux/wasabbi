@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  wasabbi_forum_id: 1
+  wasabbi_user_id: 1
+  subject: MyText
+  views: 1
+  replies: 1
+  is_locked: false
+  is_deleted: false
+  modified_by_id: 1
+  body: MyText
+
+two:
+  wasabbi_forum_id: 1
+  wasabbi_user_id: 1
+  subject: MyText
+  views: 1
+  replies: 1
+  is_locked: false
+  is_deleted: false
+  modified_by_id: 1
+  body: MyText
