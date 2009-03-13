@@ -47,3 +47,8 @@ scm = git
 path = vendor/plugins/ax_picture
 repository = git://github.com/azimux/ax_picture.git
 scm = git
+
+[vendor/plugins/acts_as_list]
+path = vendor/plugins/acts_as_list
+repository = git://github.com/rails/acts_as_list.git
+scm = git
