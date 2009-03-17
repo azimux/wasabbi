@@ -1,3 +1,4 @@
+$:.unshift 'test'
 require 'test_helper'
 
 class WasabbiForumStringOptionsControllerTest < ActionController::TestCase
