@@ -1,9 +1,32 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+norm:
+  user: norm
 
-one:
-  user_id: 1
-  post_count: 1
+metal_mod:
+  user: metal_mod
 
-two:
-  user_id: 1
-  post_count: 1
+super_mod:
+  user: metal_mod
+
+sports_mod:
+  user: metal_mod
+
+thrash_mod:
+  user: thrash_mod
+
+super_admin:
+  user: super_admin
+
+sports_admin:
+  user: sports_admin
+
+hockey_admin:
+  user: hockey_admin
+
+metal_admin:
+  user: metal_admin
+
+metal_admin_no_inherit:
+  user: metal_admin_no_inherit
+
+music_admin:
+  user: music_admin

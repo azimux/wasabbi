@@ -22,27 +22,25 @@ class WasabbiForumsControllerTest < ActionController::TestCase
   end
 
   def test_should_show_wasabbi_forum
-    get :show, :id => wasabbi_forums(:one).id
+    get :show, :id => wasabbi_forums(:sports_category).id
     assert_response :success
   end
 
   def test_should_get_edit
-    get :edit, :id => wasabbi_forums(:one).id
+    get :edit, :id => wasabbi_forums(:sports_category).id
     assert_response :success
   end
 
   def test_should_update_wasabbi_forum
-    put :update, :id => wasabbi_forums(:one).id, :wasabbi_forum => { }
+    put :update, :id => wasabbi_forums(:sports_category).id, 
+      :wasabbi_forum => { :name => "sportscat" }
     assert_redirected_to wasabbi_forum_path(assigns(:wasabbi_forum))
   end
 
   def test_should_destroy_wasabbi_forum
     assert_difference('WasabbiForum.count', -1) do
-      wasabbi_forums(:one).children.each do |c|
-        c.parent = nil
-        c.save!
-      end
-      delete :destroy, :id => wasabbi_forums(:one).id
+      wasabbi_forums(:sports_category).children.clear
+      delete :destroy, :id => wasabbi_forums(:sports_category).id
     end
 
     assert_redirected_to wasabbi_forums_path

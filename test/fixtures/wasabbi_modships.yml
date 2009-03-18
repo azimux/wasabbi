@@ -1,0 +1,28 @@
+super_modship:
+  wasabbi_user: super_mod
+
+sports_modship:
+  wasabbi_user: sports_mod
+  forum: sports_category
+  is_super_mod: false
+
+hockey_modship:
+  wasabbi_user: hockey_mod
+  forum: hockey
+  is_super_mod: false
+
+metal_modship:
+  wasabbi_user: metal_mod
+  forum: metal_category
+  is_super_mod: false
+
+metal_mod_no_inherit_modship:
+  wasabbi_user: metal_mod_no_inherit
+  forum: metal_category
+  is_super_mod: false
+  is_subforum_mod: false
+
+music_modship:
+  wasabbi_user: music_mod
+  forum: music_category
+  is_super_mod: false

@@ -1,11 +1,5 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  name: MyKey1
-  value: MyString1
-  wasabbi_forum_id: 1
-
-two:
-  name: MyKey2
-  value: MyString2
-  wasabbi_forum_id: 1
+#nothing here yet
+theme_option:
+  name: default_theme
+  value: no_theme
+  forum: sports

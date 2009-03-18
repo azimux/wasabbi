@@ -1,0 +1,28 @@
+super_adminship:
+  wasabbi_user: super_admin
+
+sports_adminship:
+  wasabbi_user: sports_admin
+  forum: sports_category
+  is_super_admin: false
+
+hockey_adminship:
+  wasabbi_user: hockey_admin
+  forum: hockey
+  is_super_admin: false
+
+metal_adminship:
+  wasabbi_user: metal_admin
+  forum: metal_category
+  is_super_admin: false
+
+metal_admin_no_inherit_adminship:
+  wasabbi_user: metal_admin_no_inherit
+  forum: metal_category
+  is_super_admin: false
+  is_subforum_admin: false
+
+music_adminship:
+  wasabbi_user: music_admin
+  forum: music_category
+  is_super_admin: false

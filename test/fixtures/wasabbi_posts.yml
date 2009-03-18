@@ -1,17 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  thread_id: 1
-  wasabbi_user_id: 1
-  modified_by_id: 1
+norms_post:
+  thread: norms_thread
+  wasabbi_user: norm
+  modified_by: norm
   is_deleted: false
-  subject: MyText
-  body: MyText
-
-two:
-  thread_id: 1
-  wasabbi_user_id: 1
-  modified_by_id: 1
-  is_deleted: false
-  subject: MyText
-  body: MyText
+  subject: "Norm's Thread"
+  body: "this is norm's first post in his first thread!"

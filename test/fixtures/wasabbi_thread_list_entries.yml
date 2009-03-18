@@ -1,11 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  forum_id: 1
-  thread_id: 1
+  forum: general
+  thread: norms_thread
   position: 1
-
-two:
-  forum_id: 1
-  thread_id: 1
-  position: 2

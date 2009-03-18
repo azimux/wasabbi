@@ -1,11 +1,48 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  id: 1
-  name: MyString
-  description: MyString
+top_level:
+  name: "main forum"
+  description: "the tippy top-most forum!"
 
-two:
-  id: 2
-  name: MyString
-  description: MyString
+music_category:
+  name: "music"
+  description: "all things music"
+  is_category: true
+  parents: top_level
+
+metal_category:
+  name: "metal"
+  description: "all things music"
+  parents: music_category
+
+sports_category:
+  name: "sports"
+  description: "all things sports"
+  is_category: true
+  parents: top_level
+
+general_category:
+  name: "Everything Else"
+  description: "Everything else"
+  is_category: true
+  parents: top_level
+
+thrash_metal:
+  name: "Thrash"
+  description: "all things thrash"
+  parents: metal_category
+
+speed_metal:
+  name: "Speed"
+  description: "all things speed"
+  parents: metal_category
+
+hockey:
+  name: "Hockey"
+  description: "all things hockey"
+  parents: sports_category
+
+football:
+  name: "Football"
+  description: "all things football"
+  parents: sports_category

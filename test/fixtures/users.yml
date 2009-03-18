@@ -1,0 +1,34 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+norm:
+  username: "norm"
+
+metal_mod:
+  username: "metal mod"
+
+super_mod:
+  username: "super mod"
+
+sports_mod:
+  username: "sports mod"
+
+thrash_mod:
+  username: "thrash mod"
+
+super_admin:
+  username: "super admin"
+
+sports_admin:
+  username: "sports admin"
+
+hockey_admin:
+  username: "hockey admin"
+
+metal_admin:
+  username: "metal admin"
+
+metal_admin_no_inherit:
+  username: "metal admin no inherit"
+
+music_admin:
+  username: "music admin"
