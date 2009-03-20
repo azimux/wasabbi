@@ -76,5 +76,22 @@ Rails::Initializer.run do |config|
 
   config.after_initialize do
     Wasabbi.user_class = User
+    Wasabbi::AppHelper.module_eval do
+      def wasabbi_login_url
+        raise "should be bypassed"
+      end
+
+      def wasabbi_current_user
+        user
+      end
+
+      if !instance_methods.include?('wasabbi_check_authentication')
+        raise "WasaBBi's AppHelper not yet included"
+      else
+        def wasabbi_check_authentication
+          check_authentication
+        end
+      end
+    end
   end
 end
