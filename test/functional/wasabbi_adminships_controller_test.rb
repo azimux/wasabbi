@@ -81,6 +81,13 @@ class WasabbiAdminshipsControllerTest < ActionController::TestCase
     assert_redirected_to wasabbi_adminship_path(assigns(:wasabbi_adminship))
   end
 
+  test "should update wasabbi_adminship non admin" do
+    put :update, {:id => wasabbi_adminships(:metal_adminship).id, :wasabbi_adminship => {
+        :is_subforum_admin => false }}, {:user => users(:norm).id}
+    assert_nil assigns(:wasabbi_adminship)
+    assert_redirected_to wasabbi_denied_admin_url
+  end
+
   test "should destroy wasabbi_adminship" do
     assert_difference('WasabbiAdminship.count', -1) do
       delete :destroy, {:id => wasabbi_adminships(:metal_adminship).id},
