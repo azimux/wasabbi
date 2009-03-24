@@ -1,0 +1,11 @@
+music_group:
+  name: "music group"
+
+sports_group:
+  name: "sports group"
+
+hockey_group:
+  name: "hockey group"
+
+football_group:
+  name: "football group"

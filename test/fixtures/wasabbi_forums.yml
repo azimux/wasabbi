@@ -1,5 +1,3 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 top_level:
   name: "main forum"
   description: "the tippy top-most forum!"
@@ -9,6 +7,7 @@ music_category:
   description: "all things music"
   is_category: true
   parents: top_level
+  required_groups: music_group
 
 metal_category:
   name: "metal"
@@ -20,6 +19,7 @@ sports_category:
   description: "all things sports"
   is_category: true
   parents: top_level
+  required_groups: sports_group
 
 general_category:
   name: "Everything Else"
@@ -41,8 +41,10 @@ hockey:
   name: "Hockey"
   description: "all things hockey"
   parents: sports_category
+  required_groups: hockey_group
 
 football:
   name: "Football"
   description: "all things football"
   parents: sports_category
+  required_groups: football_group

@@ -1,5 +1,3 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 norms_post:
   thread: norms_thread
   wasabbi_user: norm

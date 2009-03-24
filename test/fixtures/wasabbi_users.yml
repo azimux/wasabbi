@@ -1,17 +1,22 @@
 norm:
   user: norm
+  groups: music_group, sports_group, hockey_group
 
 metal_mod:
   user: metal_mod
+  groups: music_group, sports_group, hockey_group, football_group
 
 super_mod:
   user: metal_mod
+  groups: music_group, sports_group, hockey_group, football_group
 
 sports_mod:
   user: metal_mod
+  groups: music_group, sports_group, hockey_group, football_group
 
 thrash_mod:
   user: thrash_mod
+  groups: music_group, sports_group, hockey_group, football_group
 
 super_admin:
   user: super_admin
