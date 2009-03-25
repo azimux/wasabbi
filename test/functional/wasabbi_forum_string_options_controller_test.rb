@@ -34,8 +34,8 @@ class WasabbiForumStringOptionsControllerTest < ActionController::TestCase
         :forum_id => wasabbi_forums(:sports_category).id,
         :wasabbi_forum_string_option => {
           :forum_id => wasabbi_forums(:sports_category).id,
-          :name => "somekey",
-          :value => "somevalue"
+          :name => "require_login_to_read",
+          :value => "false"
         }}, :user => users(:sports_admin).id
     end
 
@@ -59,7 +59,7 @@ class WasabbiForumStringOptionsControllerTest < ActionController::TestCase
   def test_should_update_wasabbi_forum_string_option
     put :update, {:id => wasabbi_forum_string_options(:theme_option).id,
       :forum_id => wasabbi_forums(:sports_category).id,
-      :wasabbi_forum_string_option => { :value => "some_theme" }},
+      :wasabbi_forum_string_option => { :value => "default" }},
       :user => users(:sports_admin).id
     assert_redirected_to wasabbi_forum_string_option_path(assigns(:wasabbi_forum_string_option))
   end
