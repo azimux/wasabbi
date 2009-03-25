@@ -9,7 +9,7 @@ class WasabbiPostsControllerTest < ActionController::TestCase
   end
 
   test "should not get index not a member" do
-    get :index, {:forum_id => wasabbi_forums(:football)}, {:user => users(:norm).id}
+    get :index, {:thread_id => wasabbi_threads(:norms_thread)}, {:user => users(:norm).id}
     assert_response :success
     assert_not_nil assigns(:wasabbi_posts)
   end
