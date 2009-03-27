@@ -1,0 +1,21 @@
+.flashDiv {
+    padding: 5px;
+    display: table;
+    margin: 5px;
+    font-weight: bold;
+}
+
+#flashError {
+    background-color: #FFAAAA;
+    border: 2px solid red;
+}
+
+#flashWarning {
+    background-color: #FFFFAA;
+    border: 2px solid yellow;
+}
+
+#flashNotice {
+    background-color: #AAFFAA;
+    border: 2px solid green;
+}
