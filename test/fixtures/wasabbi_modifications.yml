@@ -1,0 +1,6 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+has_five:
+  wasabbi_user: super_admin
+  post: norms_post
+  quantity: 5

@@ -2,12 +2,6 @@ $:.unshift 'test'
 require 'test_helper'
 
 class WasabbiPostsControllerTest < ActionController::TestCase
-  test "should not get index, no thread specified" do
-    get :index, {}, {:user => users(:norm).id}
-    assert_response :redirect
-    assert_nil assigns(:wasabbi_posts)
-  end
-
   test "should not get index not a member" do
     get :index, {:thread_id => wasabbi_threads(:norms_thread)}, {:user => users(:norm).id}
     assert_response :success
@@ -50,12 +44,21 @@ class WasabbiPostsControllerTest < ActionController::TestCase
   end
 
   test "should update wasabbi_post" do
-    mods = wasabbi_posts(:norms_post).modifications
-    put :update, {:id => wasabbi_posts(:norms_post).id, :wasabbi_post => {
-        :modifications => wasabbi_posts(:norms_post).modifications + 1
-      }}, :users => users(:norm).id
-    assert mods != wasabbi_posts(:norms_post).modifications
-    assert_redirected_to wasabbi_post_path(assigns(:wasabbi_post))
+    test_exps = ['WasabbiPost.find(wasabbi_posts(:norms_post).id).subject',
+      'WasabbiPost.find(wasabbi_posts(:norms_post).id).total_modifications']
+
+    assert_not_changed test_exps do
+      true
+    end
+
+    assert_changed(test_exps) do
+      put :update, {:id => wasabbi_posts(:norms_post).id, :wasabbi_post => {
+          :subject => "subject changed"
+        }}, :user => users(:norm).id
+
+      assert_response :redirect
+      assert_redirected_to wasabbi_post_path(wasabbi_posts(:norms_post).id)
+    end
   end
 
   test "should destroy wasabbi_post" do

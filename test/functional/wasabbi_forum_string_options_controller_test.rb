@@ -61,6 +61,8 @@ class WasabbiForumStringOptionsControllerTest < ActionController::TestCase
       :forum_id => wasabbi_forums(:sports_category).id,
       :wasabbi_forum_string_option => { :value => "default" }},
       :user => users(:sports_admin).id
+
+
     assert_redirected_to wasabbi_forum_string_option_path(assigns(:wasabbi_forum_string_option))
   end
 
