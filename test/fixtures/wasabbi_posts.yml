@@ -5,3 +5,13 @@ norms_post:
   is_deleted: false
   subject: "Norm's Thread"
   body: "this is norm's first post in his first thread!"
+
+secret_post:
+  thread: secret_thread
+  wasabbi_user: cool_guy
+  modified_by: cool_guy
+  is_deleted: false
+  subject: "Norm's Thread"
+  body: "this is norm's first post in his first thread!"
+  subject: "Secret Thread"
+  body: "this is quite secret, you know!"

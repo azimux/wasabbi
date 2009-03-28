@@ -12,17 +12,16 @@ class WasabbiForumStringOptionTest < ActiveSupport::TestCase
   end
 
   test "valid option" do
-    option = WasabbiForumStringOption.new(:name => "require_login_to_read",
+    option = WasabbiForumStringOption.new(:name => "members_only",
       :value => "true")
     option.forum = wasabbi_forums(:metal_category)
 
     assert !wasabbi_forums(:metal_category).private_forum?
-    assert !wasabbi_forums(:thrash_metal).private_forum?
+    assert wasabbi_forums(:thrash_metal).private_forum?
+    assert wasabbi_forums(:retro_thrash).private_forum?
 
     assert_valid option
     assert option.valid?
-
-    puts WasabbiForumStringOption.count
 
     assert_difference('WasabbiForumStringOption.count') do
       assert option.save

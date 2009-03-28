@@ -2,3 +2,13 @@ theme_option:
   name: default_theme
   value: no_theme
   forum: sports
+
+secret_metal_option:
+  name: members_only
+  value: "true"
+  forum: secret_metal_forum
+
+thrash_metal_option:
+  name: members_only
+  value: "true"
+  forum: thrash_metal

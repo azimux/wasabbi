@@ -30,3 +30,9 @@ metal_admin_no_inherit:
 
 music_admin:
   user: music_admin
+
+cool_guy:
+  user: cool_guy_user
+
+music_member:
+  user: music_member_user

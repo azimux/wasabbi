@@ -18,10 +18,10 @@ class WasabbiForumStringOptionsControllerTest < ActionController::TestCase
   def test_should_not_create_wasabbi_forum_string_option
     assert_no_difference('WasabbiForumStringOption.count') do
       post :create, {:wasabbi_forum_string_option => {
-        :forum_id => wasabbi_forums(:sports_category).id,
-        :name => "somekey",
-        :value => "somevalue"
-      }}, :user => users(:norm).id
+          :forum_id => wasabbi_forums(:sports_category).id,
+          :name => "somekey",
+          :value => "somevalue"
+        }}, :user => users(:norm).id
     end
 
     assert_nil assigns(:wasabbi_forum_string_option)
@@ -34,7 +34,7 @@ class WasabbiForumStringOptionsControllerTest < ActionController::TestCase
         :forum_id => wasabbi_forums(:sports_category).id,
         :wasabbi_forum_string_option => {
           :forum_id => wasabbi_forums(:sports_category).id,
-          :name => "require_login_to_read",
+          :name => "members_only",
           :value => "false"
         }}, :user => users(:sports_admin).id
     end
@@ -61,7 +61,6 @@ class WasabbiForumStringOptionsControllerTest < ActionController::TestCase
       :forum_id => wasabbi_forums(:sports_category).id,
       :wasabbi_forum_string_option => { :value => "default" }},
       :user => users(:sports_admin).id
-
 
     assert_redirected_to wasabbi_forum_string_option_path(assigns(:wasabbi_forum_string_option))
   end

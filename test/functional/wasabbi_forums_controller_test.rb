@@ -72,6 +72,43 @@ class WasabbiForumsControllerTest < ActionController::TestCase
     assert_redirected_to wasabbi_denied_admin_path
   end
 
+  test "should not show forum not logged in members only" do
+    get :show, {:id => wasabbi_forums(:thrash_metal).id}
+
+    assert_response :redirect
+    assert_redirected_to :controller => "user", :action => "signin"
+  end
+
+  test "should not show forum not member 1" do
+    get :show, {:id => wasabbi_forums(:thrash_metal).id},
+      :user => users(:norm).id
+
+    assert_response :redirect
+    assert_redirected_to wasabbi_denied_member_url
+  end
+
+  test "should not show forum not member 2" do
+    get :show, {:id => wasabbi_forums(:secret_metal_forum).id},
+      :user => users(:music_member_user).id
+
+    assert_response :redirect
+    assert_redirected_to wasabbi_denied_member_url
+  end
+
+  test "should show member 1" do
+    get :show, {:id => wasabbi_forums(:thrash_metal).id},
+      :user => users(:music_member_user).id
+
+    assert_response :success
+  end
+
+  test "should show member 2" do
+    get :show, {:id => wasabbi_forums(:secret_metal_forum).id},
+      :user => users(:cool_guy_user).id
+
+    assert_response :success
+  end
+
   def test_should_show_wasabbi_forum
     get :show, {:id => wasabbi_forums(:sports_category).id}
 

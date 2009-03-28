@@ -7,3 +7,13 @@ norms_thread:
   is_deleted: false
   modified_by: norm
   body: "this is norm's first post in his first thread!"
+
+secret_thread:
+  wasabbi_user: cool_guy
+  subject: "Secret Thread"
+  views: 1
+  replies: 1
+  is_locked: false
+  is_deleted: false
+  modified_by: cool_guy
+  body: "this is quite secret, you know!"
