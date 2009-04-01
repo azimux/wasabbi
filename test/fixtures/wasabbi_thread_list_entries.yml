@@ -1,4 +1,14 @@
 one:
-  forum: general
+  forum: general_category
   thread: norms_thread
   position: 1
+
+two:
+  forum: general_category
+  thread: norms_replied_to_thread
+  position: 1
+
+three:
+  forum: general_category
+  thread: norms_replied_to_thread
+  position: 2

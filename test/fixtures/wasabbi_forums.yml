@@ -34,7 +34,7 @@ thrash_metal:
 
 retro_thrash:
   name: "Retro thrash"
-  description: "like good thrash but horribad"
+  description: "like good thrash but not good"
   parents: thrash_metal
 
 speed_metal:
