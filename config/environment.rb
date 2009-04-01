@@ -71,6 +71,7 @@ Rails::Initializer.run do |config|
   # like if you have constraints or database-specific column types
   config.active_record.schema_format = :sql
 
+  config.active_record.raise_on_illegal_mass_assignment = true
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
 
