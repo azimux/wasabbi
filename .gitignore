@@ -16,4 +16,3 @@ vendor/plugins/ax_lib
 vendor/plugins/ax_user
 vendor/plugins/ax_picture
 config/sess_key
-vendor/plugins/acts_as_list
