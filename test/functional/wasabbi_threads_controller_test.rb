@@ -46,8 +46,9 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
 
   test "should create wasabbi_thread" do
     assert_difference('WasabbiThread.count') do
-      post :create, {:forum_id => wasabbi_forums(:hockey).id,
+      post :create, {
         :wasabbi_thread => {
+          :forum_id => wasabbi_forums(:hockey).id,
           :subject => "norm's second thread",
           :body => "here's the body!"
         }}, :user => users(:norm).id
@@ -57,8 +58,7 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
   end
 
   test "should show wasabbi_thread" do
-    get :show, :forum_id => wasabbi_forums(:hockey).id,
-      :id => wasabbi_threads(:norms_thread).id
+    get :show, :id => wasabbi_threads(:norms_thread).id
     assert_response :success
   end
 
@@ -83,12 +83,12 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
   end
 
   test "should not destroy wasabbi_thread bad user" do
-    forum_id = wasabbi_threads(:norms_thread).forums.first.id
+    #forum_id = wasabbi_threads(:norms_thread).forums.first.id
 
     assert_no_difference('WasabbiThread.count') do
-      forum_id = wasabbi_threads(:norms_thread).forums.first.id
+      #forum_id = wasabbi_threads(:norms_thread).forums.first.id
 
-      delete :destroy, {:forum_id => forum_id,
+      delete :destroy, {
         :id => wasabbi_threads(:norms_thread).id},
         :user => users(:cool_guy_user).id
     end
@@ -98,8 +98,8 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
 
   test "should destroy wasabbi_thread" do
     assert_difference('WasabbiThread.count', -1) do
-      forum_id = wasabbi_threads(:norms_thread).forums.first.id
-      delete :destroy, {:forum_id => forum_id,
+      #forum_id = wasabbi_threads(:norms_thread).forums.first.id
+      delete :destroy, {
         :id => wasabbi_threads(:norms_thread).id},
         :user => users(:norm).id
     end
@@ -109,8 +109,8 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
 
   test "should not destroy wasabbi_thread has replies" do
     assert_no_difference('WasabbiThread.count') do
-      forum_id = wasabbi_threads(:norms_replied_to_thread).forums.first.id
-      delete :destroy, {:forum_id => forum_id,
+      #forum_id = wasabbi_threads(:norms_replied_to_thread).forums.first.id
+      delete :destroy, {
         :id => wasabbi_threads(:norms_replied_to_thread).id},
         :user => users(:norm).id
     end

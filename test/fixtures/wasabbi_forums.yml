@@ -6,12 +6,12 @@ music_category:
   name: "music"
   description: "all things music"
   is_category: true
-  parents: top_level
+  parent: top_level
 
 metal_category:
   name: "metal"
   description: "all things music"
-  parents: music_category
+  parent: music_category
   direct_members: music_member, cool_guy
   inherits_members: false
 
@@ -19,42 +19,42 @@ sports_category:
   name: "sports"
   description: "all things sports"
   is_category: true
-  parents: top_level
+  parent: top_level
 
 general_category:
   name: "Everything Else"
   description: "Everything else"
   is_category: true
-  parents: top_level
+  parent: top_level
 
 thrash_metal:
   name: "Thrash"
   description: "all things thrash"
-  parents: metal_category
+  parent: metal_category
 
 retro_thrash:
   name: "Retro thrash"
   description: "like good thrash but not good"
-  parents: thrash_metal
+  parent: thrash_metal
 
 speed_metal:
   name: "Speed"
   description: "all things speed"
-  parents: metal_category
+  parent: metal_category
 
 hockey:
   name: "Hockey"
   description: "all things hockey"
-  parents: sports_category
+  parent: sports_category
 
 football:
   name: "Football"
   description: "all things football"
-  parents: sports_category
+  parent: sports_category
 
 secret_metal_forum:
   name: "Metal Insiders Club"
   description: "forum for insiders"
-  parents: metal_category
+  parent: metal_category
   inherits_members: false
   direct_members: cool_guy
