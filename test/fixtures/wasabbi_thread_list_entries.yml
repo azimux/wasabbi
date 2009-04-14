@@ -1,14 +1,15 @@
 one:
   forum: general_category
   thread: norms_thread
-  position: 1
+  bumped_at: <%= Time.now - 5.days %>
 
 two:
   forum: general_category
   thread: norms_replied_to_thread
-  position: 1
+  bumped_at: <%= Time.now - 4.days %>
 
 three:
   forum: general_category
-  thread: norms_replied_to_thread
-  position: 2
+  thread: non_secret_thread
+  bumped_at: <%= Time.now - 3.days %>
+

@@ -27,7 +27,13 @@ secret_post:
   wasabbi_user: cool_guy
   modified_by: cool_guy
   is_deleted: false
-  subject: "Norm's Thread"
-  body: "this is norm's first post in his first thread!"
   subject: "Secret Thread"
   body: "this is quite secret, you know!"
+
+non_secret_post:
+  thread: non_secret_thread
+  wasabbi_user: cool_guy
+  modified_by: cool_guy
+  is_deleted: false
+  subject: "non-Secret Thread"
+  body: "this is not quite secret, you know!"
