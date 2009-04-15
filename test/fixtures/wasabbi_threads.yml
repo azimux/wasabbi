@@ -28,7 +28,7 @@ secret_thread:
   is_locked: false
   is_deleted: false
   modified_by: cool_guy
-  forum: general_category
+  forum: secret_metal_forum
   body: "this is quite secret, you know!"
 
 non_secret_thread:
