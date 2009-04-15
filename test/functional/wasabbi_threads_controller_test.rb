@@ -9,7 +9,7 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
   end
 
   test "should not get index no forum" do
-    assert_raise(ActiveRecord::RecordNotFound) do
+    assert_raise(Wasabbi::NoForumGiven) do
       get :index, {}, :user => users(:norm).id
     end
 
@@ -25,7 +25,8 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
     assert_no_difference('WasabbiThread.count') do
       assert_raise(ActiveRecord::IllegalMassAssignmentError) do
         post :create, {:wasabbi_thread => {
-            :wasabbi_user_id => wasabbi_users(:norm).id,
+            :wasabbi_user_id => wasabbi_users(:cool_guy).id,
+            :forum_id => wasabbi_forums(:hockey).id,
             :subject => "norm's second thread",
             :body => "here's the body!"
           }}, :user => users(:norm).id
