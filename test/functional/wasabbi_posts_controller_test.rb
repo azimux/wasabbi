@@ -3,7 +3,13 @@ require 'test_helper'
 
 class WasabbiPostsControllerTest < ActionController::TestCase
   test "should not get index not a member" do
-    get :index, {:thread_id => wasabbi_threads(:norms_thread)}, {:user => users(:norm).id}
+    get :index, {:thread_id => wasabbi_threads(:secret_thread)}, {:user => users(:norm).id}
+    assert_nil assigns(:wasabbi_posts)
+    assert_redirected_to wasabbi_denied_member_path
+  end
+
+  test "should get index is a member" do
+    get :index, {:thread_id => wasabbi_threads(:secret_thread)}, {:user => users(:cool_guy_user).id}
     assert_response :success
     assert_not_nil assigns(:wasabbi_posts)
   end
@@ -16,8 +22,22 @@ class WasabbiPostsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new, {}, :user => users(:norm).id
+    get :new, {:thread_id => wasabbi_threads(:norms_thread).id}, :user => users(:norm).id
     assert_response :success
+    assert_not_nil assigns(:wasabbi_post)
+  end
+
+  test "should not get new not member" do
+    get :new, {:thread_id => wasabbi_threads(:secret_thread).id}, :user => users(:norm).id
+    assert_nil assigns(:wasabbi_posts)
+    assert_redirected_to wasabbi_denied_member_path
+  end
+
+  test "should get new is member" do
+    get :new, {:thread_id => wasabbi_threads(:secret_thread).id},
+      :user => users(:cool_guy_user).id
+    assert_response :success
+    assert_not_nil assigns(:wasabbi_post)
   end
 
   test "should create wasabbi_post" do
