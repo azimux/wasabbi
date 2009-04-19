@@ -20,7 +20,7 @@ mailer = open(File.join(RAILS_ROOT, "config", "mailer.yml")) {|f| YAML.load(f)}
 config.action_mailer.smtp_settings = HashWithIndifferentAccess.new(mailer)
 
 
-#Clean this up.  Make a better way to connect to ax_user
+#Clean this up.  Make a better way to connect to ax_user #XXX
 $site_name = "WasaBBi dev"
 $site_url = "localhost:3000"
 $from_email_string = "#{$site_name} <azimux@gmail.com>"
