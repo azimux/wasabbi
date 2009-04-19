@@ -68,6 +68,24 @@ class WasabbiForumsControllerTest < ActionController::TestCase
     assert_redirected_to wasabbi_forum_path(assigns(:wasabbi_forum))
   end
 
+  def test_should_create_wasabbi_forum_no_parent
+    assert_difference('WasabbiForum.count') do
+      post :create, {
+        :wasabbi_forum => {
+          :name => "new top forum",
+          :description => "forum without parent!",
+          :parent_id => ""
+        }
+      }, :user => users(:super_admin).id
+    end
+
+    assert_nil WasabbiForum.find_by_name("new top forum").parent
+    assert_equal WasabbiForum.find_by_name("new top forum").description,
+      "forum without parent!"
+
+    assert_redirected_to wasabbi_forum_path(assigns(:wasabbi_forum))
+  end
+
   def test_should_not_create_wasabbi_forum_norm
     assert_no_difference('WasabbiForum.count') do
       post :create, {
