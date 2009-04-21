@@ -143,18 +143,38 @@ class WasabbiForumsControllerTest < ActionController::TestCase
     get :show, {:id => wasabbi_forums(:sports_category).id}
 
     assert_response :success
+    assert_not_nil assigns(:wasabbi_forum)
   end
+
   def test_should_show_wasabbi_forum_admin
     get :show, {:id => wasabbi_forums(:sports_category).id},
       :user => users(:sports_admin).id
 
     assert_response :success
+    assert_not_nil assigns(:wasabbi_forum)
   end
+
   def test_should_show_wasabbi_forum_norm
     get :show, {:id => wasabbi_forums(:sports_category).id},
       :user => users(:norm).id
 
     assert_response :success
+    assert_not_nil assigns(:wasabbi_forum)
+  end
+
+  def test_should_show_wasabbi_forum_norm_top_level
+    get :show, {:id => wasabbi_forums(:top_level).id},
+      :user => users(:norm).id
+
+    assert_response :success
+    assert_not_nil assigns(:wasabbi_forum)
+  end
+
+  def test_should_show_wasabbi_forum_norm_root
+    get :first, {},
+      :user => users(:norm).id
+
+    assert_redirected_to wasabbi_forum_path(wasabbi_forums(:top_level))
   end
 
   def test_should_get_edit

@@ -7,6 +7,6 @@ class WasabbiThreadListEntryTest < ActiveSupport::TestCase
     tle = wasabbi_thread_list_entries(:one)
 
     assert_equal tle.thread.id, wasabbi_threads(:norms_thread).id
-    assert_equal tle.forum.id, wasabbi_forums(:general_category).id
+    assert_equal tle.forum.id, wasabbi_forums(:general_forum).id
   end
 end

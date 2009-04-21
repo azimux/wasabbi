@@ -6,7 +6,7 @@ norms_thread:
   is_locked: false
   is_deleted: false
   modified_by: norm
-  forum: general_category
+  forum: general_forum
   body: "this is norm's first post in his first thread!"
 
 norms_replied_to_thread:
@@ -17,7 +17,7 @@ norms_replied_to_thread:
   is_locked: false
   is_deleted: false
   modified_by: norm
-  forum: general_category
+  forum: general_forum
   body: "this thread should have two posts, one from norm and one from somebody else."
 
 secret_thread:
@@ -39,5 +39,5 @@ non_secret_thread:
   is_locked: false
   is_deleted: false
   modified_by: cool_guy
-  forum: general_category
+  forum: general_forum
   body: "this is not secret, you know!"

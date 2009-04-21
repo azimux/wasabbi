@@ -1,15 +1,15 @@
 one:
-  forum: general_category
+  forum: general_forum
   thread: norms_thread
   bumped_at: <%= Time.now - 5.days %>
 
 two:
-  forum: general_category
+  forum: general_forum
   thread: norms_replied_to_thread
   bumped_at: <%= Time.now - 4.days %>
 
 three:
-  forum: general_category
+  forum: general_forum
   thread: non_secret_thread
   bumped_at: <%= Time.now - 3.days %>
 

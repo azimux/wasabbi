@@ -7,7 +7,7 @@ class WasabbiThreadTest < ActiveSupport::TestCase
     id1 = WasabbiThread.find(wasabbi_threads(:norms_thread).id).forum.id
     assert id1
 
-    assert_equal id1, wasabbi_forums(:general_category).id
+    assert_equal id1, wasabbi_forums(:general_forum).id
   end
 
   test "move" do
@@ -35,7 +35,7 @@ class WasabbiThreadTest < ActiveSupport::TestCase
   end
 
   test "bump" do
-    forum = WasabbiForum.find(wasabbi_forums(:general_category).id)
+    forum = WasabbiForum.find(wasabbi_forums(:general_forum).id)
 
     pre = forum.thread_list_entries
     last = pre.last
@@ -55,7 +55,7 @@ class WasabbiThreadTest < ActiveSupport::TestCase
   end
 
   test "bump threads" do
-    forum = WasabbiForum.find(wasabbi_forums(:general_category).id)
+    forum = WasabbiForum.find(wasabbi_forums(:general_forum).id)
 
     pre = forum.threads
     last = pre.last

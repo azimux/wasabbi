@@ -27,6 +27,12 @@ general_category:
   is_category: true
   parent: top_level
 
+general_forum:
+  name: "General"
+  description: "Anything goes"
+  is_category: true
+  parent: general_category
+
 thrash_metal:
   name: "Thrash"
   description: "all things thrash"
