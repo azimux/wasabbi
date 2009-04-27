@@ -8,6 +8,8 @@ norms_thread:
   modified_by: norm
   forum: general_forum
   body: "this is norm's first post in his first thread!"
+  bumped_at: <%= Time.now - 5.days %>
+
 
 norms_replied_to_thread:
   wasabbi_user: norm
@@ -19,6 +21,8 @@ norms_replied_to_thread:
   modified_by: norm
   forum: general_forum
   body: "this thread should have two posts, one from norm and one from somebody else."
+  bumped_at: <%= Time.now - 4.days %>
+
 
 secret_thread:
   wasabbi_user: cool_guy
@@ -30,6 +34,8 @@ secret_thread:
   modified_by: cool_guy
   forum: secret_metal_forum
   body: "this is quite secret, you know!"
+  bumped_at: <%= Time.now - 3.days %>
+
 
 non_secret_thread:
   wasabbi_user: cool_guy
@@ -41,3 +47,4 @@ non_secret_thread:
   modified_by: cool_guy
   forum: general_forum
   body: "this is not secret, you know!"
+  bumped_at: <%= Time.now - 2.days %>

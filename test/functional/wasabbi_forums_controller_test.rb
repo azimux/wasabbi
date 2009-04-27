@@ -191,11 +191,13 @@ class WasabbiForumsControllerTest < ActionController::TestCase
   end
 
   def test_should_destroy_wasabbi_forum
+    parent = WasabbiForum.find(wasabbi_forums(:hockey).id).parent
+
     assert_difference('WasabbiForum.count', -1) do
       delete :destroy, {:id => wasabbi_forums(:hockey).id},
         :user => users(:sports_admin).id
     end
 
-    assert_redirected_to wasabbi_forums_path
+    assert_redirected_to wasabbi_forum_path(parent)
   end
 end

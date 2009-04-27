@@ -17,8 +17,12 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new, {:forum_id => wasabbi_forums(:hockey).id}, :user => users(:norm).id
+    get :new, {:wasabbi_thread => {:forum_id => wasabbi_forums(:hockey).id}}, :user => users(:norm).id
     assert_response :success
+
+    tag = find_tag(:tag => "input", :attributes => {:name => "wasabbi_thread[forum_id]"})
+    assert_equal tag['value'].to_i, wasabbi_forums(:hockey).id
+    assert wasabbi_forums(:hockey).id > 0
   end
 
   test "should not create wasabbi_thread bad attribute" do
