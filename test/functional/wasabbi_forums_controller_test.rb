@@ -109,6 +109,12 @@ class WasabbiForumsControllerTest < ActionController::TestCase
     assert_redirected_to :controller => "user", :action => "signin"
   end
 
+  test "should show forum with threads not logged in" do
+    get :show, :id => wasabbi_forums(:general_forum).id
+
+    assert_match response, /Norm's Replied-to Thread/i
+  end
+
   test "should not show forum not member 1" do
     get :show, {:id => wasabbi_forums(:thrash_metal).id},
       :user => users(:norm).id
@@ -173,6 +179,12 @@ class WasabbiForumsControllerTest < ActionController::TestCase
   def test_should_show_wasabbi_forum_norm_root
     get :first, {},
       :user => users(:norm).id
+
+    assert_redirected_to wasabbi_forum_path(wasabbi_forums(:top_level))
+  end
+
+  def test_should_show_wasabbi_forum_root_not_signed_in
+    get :first
 
     assert_redirected_to wasabbi_forum_path(wasabbi_forums(:top_level))
   end
