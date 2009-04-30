@@ -110,9 +110,9 @@ class WasabbiForumsControllerTest < ActionController::TestCase
   end
 
   test "should show forum with threads not logged in" do
-    get :show, :id => wasabbi_forums(:general_forum).id
+    res = get :show, :id => wasabbi_forums(:general_forum).id
 
-    assert_match response, /Norm's Replied-to Thread/i
+    assert_match /Norm's Replied-to Thread/i, res.body
   end
 
   test "should not show forum not member 1" do
