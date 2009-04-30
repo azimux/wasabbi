@@ -41,10 +41,10 @@ class WasabbiPostsControllerTest < ActionController::TestCase
   end
 
   test "should create wasabbi_post" do
-    assert_difference('WasabbiPost.count') do
+    assert_difference(['WasabbiPost.count',
+        'WasabbiUser.find(wasabbi_users(:norm).id).post_count']) do
       post :create, {:wasabbi_post => {
           :thread_id => wasabbi_threads(:norms_thread).id,
-          :wasabbi_user_id => wasabbi_users(:norm).id,
           :subject => "subject2",
           :body => "this is the post's body."
         }}, :user => users(:norm).id

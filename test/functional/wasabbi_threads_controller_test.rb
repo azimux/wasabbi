@@ -50,7 +50,8 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
   end
 
   test "should create wasabbi_thread" do
-    assert_difference('WasabbiThread.count') do
+    assert_difference(['WasabbiThread.count',
+        'WasabbiUser.find(wasabbi_users(:norm).id).post_count']) do
       post :create, {
         :wasabbi_thread => {
           :forum_id => wasabbi_forums(:hockey).id,
