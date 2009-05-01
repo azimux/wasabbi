@@ -13,6 +13,8 @@ norms_replied_to_post:
   is_deleted: false
   subject: "Norm's Replied-to Thread"
   body: "this thread should have two posts, one from norm and one from somebody else."
+  created_at: <%= Time.now - 1.day %>
+  updated_at: <%= Time.now - 1.day %>
 
 cool_guys_reply:
   thread: norms_replied_to_thread
@@ -21,6 +23,8 @@ cool_guys_reply:
   is_deleted: false
   subject: "Re: Norm's Replied-to Thread"
   body: "great thread A+++ 10/10 two thumbs up would read again"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
 
 secret_post:
   thread: secret_thread

@@ -60,6 +60,17 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
         }}, :user => users(:norm).id
     end
 
+    thread = WasabbiThread.find_by_subject("norm's second thread")
+
+    assert thread
+
+    post = WasabbiPost.find(:first,
+      :conditions => "thread_id = #{thread.id}")
+
+    assert post
+
+    assert_equal post.subject, thread.subject
+
     assert_redirected_to wasabbi_thread_path(assigns(:wasabbi_thread))
   end
 

@@ -73,4 +73,9 @@ class WasabbiThreadTest < ActiveSupport::TestCase
     assert_not_equal pre, forum.threads
     assert_equal last, forum.threads.first
   end
+
+  test "last post" do
+    assert_equal wasabbi_threads(:norms_replied_to_thread).last_post.id,
+      wasabbi_posts(:cool_guys_reply).id
+  end
 end
