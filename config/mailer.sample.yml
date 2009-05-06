@@ -1,0 +1,4 @@
+---
+address: 'smtp.someserver.net'
+port: 25
+domain: 'somedomain.com'
