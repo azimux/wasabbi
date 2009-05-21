@@ -22,7 +22,7 @@ class WasabbiPostsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new, {:thread_id => wasabbi_threads(:norms_thread).id}, :user => users(:norm).id
+    get :new, {:wasabbi_post => {:thread_id => wasabbi_threads(:norms_thread).id}}, :user => users(:norm).id
     assert_response :success
     assert_not_nil assigns(:wasabbi_post)
   end
@@ -34,7 +34,7 @@ class WasabbiPostsControllerTest < ActionController::TestCase
   end
 
   test "should get new is member" do
-    get :new, {:thread_id => wasabbi_threads(:secret_thread).id},
+    get :new, {:wasabbi_post => {:thread_id => wasabbi_threads(:secret_thread).id}},
       :user => users(:cool_guy_user).id
     assert_response :success
     assert_not_nil assigns(:wasabbi_post)
