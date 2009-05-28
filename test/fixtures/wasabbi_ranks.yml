@@ -1,0 +1,9 @@
+noob:
+  name: noob
+  lbound: 1
+  rbound: 90
+
+pro:
+  name: pro
+  lbound: 101
+  rbound: 10000
