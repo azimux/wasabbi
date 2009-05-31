@@ -1,7 +1,6 @@
 norms_post:
   thread: norms_thread
   wasabbi_user: norm
-  modified_by: norm
   is_deleted: false
   subject: "Norm's Thread"
   body: "this is norm's first post in his first thread!"
@@ -9,7 +8,6 @@ norms_post:
 norms_replied_to_post:
   thread: norms_replied_to_thread
   wasabbi_user: norm
-  modified_by: norm
   is_deleted: false
   subject: "Norm's Replied-to Thread"
   body: "this thread should have two posts, one from norm and one from somebody else."
@@ -19,7 +17,6 @@ norms_replied_to_post:
 cool_guys_reply:
   thread: norms_replied_to_thread
   wasabbi_user: cool_guy
-  modified_by: cool_guy
   is_deleted: false
   subject: "Re: Norm's Replied-to Thread"
   body: "great thread A+++ 10/10 two thumbs up would read again"
@@ -29,7 +26,6 @@ cool_guys_reply:
 secret_post:
   thread: secret_thread
   wasabbi_user: cool_guy
-  modified_by: cool_guy
   is_deleted: false
   subject: "Secret Thread"
   body: "this is quite secret, you know!"
@@ -37,7 +33,6 @@ secret_post:
 non_secret_post:
   thread: non_secret_thread
   wasabbi_user: cool_guy
-  modified_by: cool_guy
   is_deleted: false
   subject: "non-Secret Thread"
   body: "this is not quite secret, you know!"
