@@ -50,7 +50,8 @@ class WasabbiPostsControllerTest < ActionController::TestCase
         }}, :user => users(:norm).id
     end
 
-    assert_redirected_to wasabbi_post_path(assigns(:wasabbi_post))
+    assert_redirected_to wasabbi_thread_path(assigns(:wasabbi_post).thread,
+      :post_id => assigns(:wasabbi_post).id)
   end
 
   test "should show wasabbi_post" do
@@ -100,6 +101,11 @@ class WasabbiPostsControllerTest < ActionController::TestCase
     assert_difference('WasabbiPost.count', -1) do
       delete :destroy, {:id => post.id},
         :user => users(:norm).id
+    end
+
+    #make sure the thread has been deleted as well
+    assert_raise ActiveRecord::RecordNotFound do
+      assert_not_nil WasabbiThread.find(thread.id)
     end
 
     assert_redirected_to wasabbi_thread_url(thread, :post_id => post.id)
