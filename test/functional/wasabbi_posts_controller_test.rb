@@ -82,25 +82,27 @@ class WasabbiPostsControllerTest < ActionController::TestCase
   end
 
   test "should destroy wasabbi_post super admin" do
-    thread = wasabbi_posts(:norms_post).thread
+    post = wasabbi_posts(:norms_post)
+    thread = post.thread
 
     assert_difference('WasabbiPost.count', -1) do
-      delete :destroy, {:id => wasabbi_posts(:norms_post).id},
+      delete :destroy, {:id => post.id},
         :user => users(:super_admin).id
     end
 
-    assert_redirected_to thread
+    assert_redirected_to wasabbi_thread_url(thread, :post_id => post.id)
   end
 
   test "should destroy wasabbi_post owner" do
-    thread = wasabbi_posts(:norms_post).thread
+    post = wasabbi_posts(:norms_post)
+    thread = post.thread
 
     assert_difference('WasabbiPost.count', -1) do
-      delete :destroy, {:id => wasabbi_posts(:norms_post).id},
+      delete :destroy, {:id => post.id},
         :user => users(:norm).id
     end
 
-    assert_redirected_to thread
+    assert_redirected_to wasabbi_thread_url(thread, :post_id => post.id)
   end
 
   test "should not destroy wasabbi_post not owner" do
@@ -110,5 +112,29 @@ class WasabbiPostsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to wasabbi_denied_mod_path
+  end
+
+  test "should not destroy wasabbi_post not last" do
+    post = wasabbi_posts(:norms_replied_to_post)
+    thread = post.thread
+
+    assert_no_difference('WasabbiPost.count', -1) do
+      delete :destroy, {:id => post.id},
+        :user => users(:norm).id
+    end
+
+    assert_redirected_to wasabbi_not_last_path(:post_id => post.id)
+  end
+
+  test "should destroy wasabbi_post is last" do
+    post = wasabbi_posts(:cool_guys_reply)
+    thread = post.thread
+
+    assert_difference('WasabbiPost.count', -1) do
+      delete :destroy, {:id => post.id},
+        :user => users(:cool_guy_user).id
+    end
+
+    assert_redirected_to wasabbi_thread_url(thread, :post_id => post.id)
   end
 end
