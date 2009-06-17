@@ -2,7 +2,7 @@ norms_thread:
   wasabbi_user: norm
   subject: "Norm's Thread"
   views: 1
-  replies: 1
+  replies: 0
   is_locked: false
   is_deleted: false
   modified_by: norm
@@ -15,7 +15,7 @@ norms_replied_to_thread:
   wasabbi_user: norm
   subject: "Norm's Replied-to Thread"
   views: 11000
-  replies: 2
+  replies: 1
   is_locked: false
   is_deleted: false
   modified_by: norm
@@ -28,7 +28,7 @@ secret_thread:
   wasabbi_user: cool_guy
   subject: "Secret Thread"
   views: 1
-  replies: 1
+  replies: 0
   is_locked: false
   is_deleted: false
   modified_by: cool_guy
@@ -41,7 +41,7 @@ non_secret_thread:
   wasabbi_user: cool_guy
   subject: "non-Secret Thread"
   views: 1
-  replies: 1
+  replies: 0
   is_locked: false
   is_deleted: false
   modified_by: cool_guy
