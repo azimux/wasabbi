@@ -41,10 +41,34 @@ class WasabbiPostsControllerTest < ActionController::TestCase
   end
 
   test "should create wasabbi_post" do
+    assert_equal WasabbiThread.find(wasabbi_threads(:norms_thread).id).replies,
+      wasabbi_threads(:norms_thread).replies
+
     assert_difference(['WasabbiPost.count',
-        'WasabbiUser.find(wasabbi_users(:norm).id).post_count']) do
+        'WasabbiUser.find(wasabbi_users(:norm).id).post_count',
+        'WasabbiThread.find(wasabbi_threads(:norms_thread).id).replies'
+      ]) do
       post :create, {:wasabbi_post => {
           :thread_id => wasabbi_threads(:norms_thread).id,
+          :subject => "subject2",
+          :body => "this is the post's body."
+        }}, :user => users(:norm).id
+    end
+
+    assert_redirected_to wasabbi_thread_path(assigns(:wasabbi_post).thread,
+      :post_id => assigns(:wasabbi_post).id)
+  end
+
+  test "should create wasabbi_post in replied to" do
+    assert_equal WasabbiThread.find(wasabbi_threads(:norms_replied_to_thread).id).replies,
+      wasabbi_threads(:norms_replied_to_thread).replies
+
+    assert_difference(['WasabbiPost.count',
+        'WasabbiUser.find(wasabbi_users(:norm).id).post_count',
+        'WasabbiThread.find(wasabbi_threads(:norms_replied_to_thread).id).replies'
+      ]) do
+      post :create, {:wasabbi_post => {
+          :thread_id => wasabbi_threads(:norms_replied_to_thread).id,
           :subject => "subject2",
           :body => "this is the post's body."
         }}, :user => users(:norm).id
