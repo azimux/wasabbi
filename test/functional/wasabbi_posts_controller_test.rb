@@ -102,7 +102,8 @@ class WasabbiPostsControllerTest < ActionController::TestCase
         }}, :user => users(:norm).id
 
       assert_response :redirect
-      assert_redirected_to wasabbi_post_path(wasabbi_posts(:norms_post).id)
+      assert_redirected_to wasabbi_thread_path(wasabbi_posts(:norms_post).thread.id,
+        :post_id => wasabbi_posts(:norms_post).id)
     end
   end
 
