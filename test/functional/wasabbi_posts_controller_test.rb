@@ -98,12 +98,15 @@ class WasabbiPostsControllerTest < ActionController::TestCase
 
     assert_changed(test_exps) do
       put :update, {:id => wasabbi_posts(:norms_post).id, :wasabbi_post => {
-          :subject => "subject changed"
+          :subject => "sūbject changed"
         }}, :user => users(:norm).id
 
       assert_response :redirect
       assert_redirected_to wasabbi_thread_path(wasabbi_posts(:norms_post).thread.id,
         :post_id => wasabbi_posts(:norms_post).id)
+
+      assert_equal WasabbiPost.find(wasabbi_posts(:norms_post).id).subject,
+        "sūbject changed"
     end
   end
 
