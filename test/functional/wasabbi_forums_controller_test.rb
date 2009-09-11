@@ -177,14 +177,14 @@ class WasabbiForumsControllerTest < ActionController::TestCase
   end
 
   def test_should_show_wasabbi_forum_norm_root
-    get :first, {},
+    get :top, {},
       :user => users(:norm).id
 
     assert_redirected_to wasabbi_forum_path(wasabbi_forums(:top_level))
   end
 
   def test_should_show_wasabbi_forum_root_not_signed_in
-    get :first
+    get :top
 
     assert_redirected_to wasabbi_forum_path(wasabbi_forums(:top_level))
   end
