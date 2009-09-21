@@ -56,7 +56,9 @@ class WasabbiPostsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to wasabbi_thread_path(assigns(:wasabbi_post).thread,
-      :post_id => assigns(:wasabbi_post).id)
+      :post_id => assigns(:wasabbi_post).id,
+      :anchor => assigns(:wasabbi_post).id
+    )
   end
 
   test "should create wasabbi_post in replied to" do
@@ -74,8 +76,11 @@ class WasabbiPostsControllerTest < ActionController::TestCase
         }}, :user => users(:norm).id
     end
 
+    post_id = assigns(:wasabbi_post).id
+
     assert_redirected_to wasabbi_thread_path(assigns(:wasabbi_post).thread,
-      :post_id => assigns(:wasabbi_post).id)
+      :post_id => post_id,
+      :anchor => post_id)
   end
 
   test "should show wasabbi_post" do
@@ -103,7 +108,8 @@ class WasabbiPostsControllerTest < ActionController::TestCase
 
       assert_response :redirect
       assert_redirected_to wasabbi_thread_path(wasabbi_posts(:norms_post).thread.id,
-        :post_id => wasabbi_posts(:norms_post).id)
+        :post_id => wasabbi_posts(:norms_post).id,
+        :anchor => wasabbi_posts(:norms_post).id)
 
       assert_equal WasabbiPost.find(wasabbi_posts(:norms_post).id).subject,
         "sūbject changed"
@@ -113,18 +119,27 @@ class WasabbiPostsControllerTest < ActionController::TestCase
   test "should destroy wasabbi_post super admin" do
     post = wasabbi_posts(:norms_post)
     thread = post.thread
+    forum = thread.forum
+    post_count = thread.posts.count
 
     assert_difference('WasabbiPost.count', -1) do
       delete :destroy, {:id => post.id},
         :user => users(:super_admin).id
     end
 
-    assert_redirected_to wasabbi_thread_url(thread, :post_id => post.id)
+    if post_count == 1
+      assert_redirected_to wasabbi_forum_url(forum)
+    else
+      assert_redirected_to wasabbi_thread_url(thread,
+        :post_id => thread.posts.last.id,
+        :anchor => thread.posts.last.id)
+    end
   end
 
   test "should destroy wasabbi_post owner" do
     post = wasabbi_posts(:norms_post)
     thread = post.thread
+    forum = thread.forum
 
     assert_difference('WasabbiPost.count', -1) do
       delete :destroy, {:id => post.id},
@@ -136,7 +151,7 @@ class WasabbiPostsControllerTest < ActionController::TestCase
       assert_not_nil WasabbiThread.find(thread.id)
     end
 
-    assert_redirected_to wasabbi_thread_url(thread, :post_id => post.id)
+    assert_redirected_to wasabbi_forum_url(forum)
   end
 
   test "should not destroy wasabbi_post not owner" do
@@ -163,12 +178,17 @@ class WasabbiPostsControllerTest < ActionController::TestCase
   test "should destroy wasabbi_post is last" do
     post = wasabbi_posts(:cool_guys_reply)
     thread = post.thread
+    forum = thread.forum
 
     assert_difference('WasabbiPost.count', -1) do
       delete :destroy, {:id => post.id},
         :user => users(:cool_guy_user).id
     end
 
-    assert_redirected_to wasabbi_thread_url(thread, :post_id => post.id)
+    post_id = thread.posts.last.id
+
+    assert_redirected_to wasabbi_thread_url(thread,
+      :post_id => post_id,
+      :anchor => post_id)
   end
 end
