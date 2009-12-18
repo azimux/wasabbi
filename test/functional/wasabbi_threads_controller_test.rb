@@ -82,6 +82,16 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
     end
   end
 
+  test "should show wasabbi_thread logged in" do
+    #Let's make sure that the views got incremented
+    assert_difference('WasabbiThread.find(wasabbi_threads(:norms_thread).id).views') do
+      get :show, {
+        :id => wasabbi_threads(:norms_thread).id
+      }, :user => users(:norm).id
+      assert_response :success
+    end
+  end
+
   test "should get edit" do
     get :edit, {:id => wasabbi_threads(:norms_thread).id},
       :user => users(:norm).id
