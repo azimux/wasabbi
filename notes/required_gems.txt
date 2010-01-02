@@ -1,6 +1,7 @@
 one of the following:
 postgres-pr
 ruby-pg
+pg
 
 optional (Deployment specific):
 mongrel
