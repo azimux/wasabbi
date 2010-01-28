@@ -4,7 +4,7 @@ require 'test_helper'
 class WasabbiForumsControllerTest < ActionController::TestCase
   def test_should_not_get_index_not_signed_in
     res = get :index
-    assert_redirected_to :controller => 'user', :action => 'signin'
+    assert_redirected_to login_url
   end
 
   def test_should_not_get_index_not_super_admin
@@ -41,7 +41,7 @@ class WasabbiForumsControllerTest < ActionController::TestCase
   def test_should_not_get_new_not_logged_in
     get :new, {:parent_id => wasabbi_forums(:sports_category).id}
     assert_nil assigns(:wasabbi_forum)
-    assert_redirected_to :controller => 'user', :action => 'signin'
+    assert_redirected_to login_url
   end
 
   def test_should_not_get_new_not_admin
@@ -106,7 +106,7 @@ class WasabbiForumsControllerTest < ActionController::TestCase
     get :show, {:id => wasabbi_forums(:thrash_metal).id}
 
     assert_response :redirect
-    assert_redirected_to :controller => "user", :action => "signin"
+    assert_redirected_to login_url
   end
 
   test "should show forum with threads not logged in" do

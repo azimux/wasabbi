@@ -59,7 +59,7 @@ class WasabbiModshipsControllerTest < ActionController::TestCase
       delete :destroy, :id => wasabbi_modships(:metal_modship).id
     end
 
-    assert_redirected_to :controller => "user", :action => "signin"
+    assert_redirected_to login_url
   end
 
   test "should not destroy wasabbi_modship bad admin" do

@@ -47,3 +47,8 @@ scm = git
 path = vendor/plugins/foreign_key_migrations
 repository = git://github.com/azimux/foreign_key_migrations.git
 scm = git
+
+[vendor/plugins/multimodel_transactions]
+path = vendor/plugins/multimodel_transactions
+repository = git://github.com/azimux/multimodel_transactions.git
+scm = git

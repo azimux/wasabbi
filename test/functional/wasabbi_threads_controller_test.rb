@@ -46,7 +46,7 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
       }
     end
 
-    assert_redirected_to :controller => "user", :action => "signin"
+    assert_redirected_to login_url
   end
 
   test "should create wasabbi_thread" do
@@ -101,7 +101,7 @@ class WasabbiThreadsControllerTest < ActionController::TestCase
   test "should not update wasabbi_thread not logged in" do
     put :update, {:id => wasabbi_threads(:norms_thread).id, :wasabbi_thread => {
         :subject => wasabbi_threads(:norms_thread).subject + " modified" }}
-    assert_redirected_to :controller => "user", :action => "signin"
+    assert_redirected_to login_url
   end
 
   test "should not update wasabbi_thread" do

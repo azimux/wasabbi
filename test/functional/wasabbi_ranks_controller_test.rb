@@ -3,7 +3,7 @@ require 'test_helper'
 class WasabbiRanksControllerTest < ActionController::TestCase
   test "should not get index login" do
     get :index
-    assert_redirected_to :controller => "user", :action => "signin"
+    assert_redirected_to login_url
   end
 
   test "should not get index admin" do
@@ -27,7 +27,7 @@ class WasabbiRanksControllerTest < ActionController::TestCase
       post :create, :wasabbi_rank => { }
     end
 
-    assert_redirected_to :controller => "user", :action => "signin"
+    assert_redirected_to login_url
   end
 
   test "should not create wasabbi_rank admin" do
@@ -65,7 +65,7 @@ class WasabbiRanksControllerTest < ActionController::TestCase
   test "should not update wasabbi_rank login" do
     put :update, :id => wasabbi_ranks(:noob).id,
       :wasabbi_rank => { :rbound => 100 }
-    assert_redirected_to :controller => "user", :action => "signin"
+    assert_redirected_to login_url
   end
 
   test "should not destroy wasabbi_rank login" do
@@ -73,7 +73,7 @@ class WasabbiRanksControllerTest < ActionController::TestCase
       delete :destroy, :id => wasabbi_ranks(:noob).id
     end
 
-    assert_redirected_to :controller => "user", :action => "signin"
+    assert_redirected_to login_url
   end
 
   test "should not update wasabbi_rank admin" do

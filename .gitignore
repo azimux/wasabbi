@@ -17,3 +17,4 @@ config/sess_key
 config/mailer.yml
 vendor/plugins/redhillonrails_core
 vendor/plugins/foreign_key_migrations
+vendor/plugins/multimodel_transactions

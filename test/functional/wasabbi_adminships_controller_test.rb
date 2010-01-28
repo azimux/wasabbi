@@ -1,12 +1,12 @@
-$:.unshift 'test'
-require 'test_helper'
+$:.unshift File.join(File.dirname(__FILE__), '..', 'lib') if $0 == __FILE__
+require File.dirname(__FILE__) + '/../test_helper'
 
 class WasabbiAdminshipsControllerTest < ActionController::TestCase
   test "index not logged in" do
     wasabbi_adminships_path
     get :index
     assert_response :redirect
-    assert_redirected_to :controller => "user", :action => "signin"
+    assert_redirected_to login_url
     assert_nil assigns(:wasabbi_adminships)
   end
 
